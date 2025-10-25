@@ -8,6 +8,7 @@ const Disney = () => {
     {
       id: "magic-kingdom",
       name: "Magic Kingdom",
+      shortName: "Magic Kingdom",
       icon: "🏰",
       rides: [
         "Seven Dwarfs Mine Train",
@@ -22,6 +23,7 @@ const Disney = () => {
     {
       id: "epcot",
       name: "EPCOT",
+      shortName: "EPCOT",
       icon: "🌍",
       rides: [
         "Test Track",
@@ -36,6 +38,7 @@ const Disney = () => {
     {
       id: "hollywood-studios",
       name: "Hollywood Studios",
+      shortName: "Hollywood Studios",
       icon: "🎬",
       rides: [
         "Star Wars: Rise of the Resistance",
@@ -50,6 +53,7 @@ const Disney = () => {
     {
       id: "animal-kingdom",
       name: "Animal Kingdom",
+      shortName: "Animal Kingdom",
       icon: "🦁",
       rides: [
         "Avatar Flight of Passage",
@@ -104,11 +108,11 @@ const Disney = () => {
                 <TabsTrigger 
                   key={park.id} 
                   value={park.id}
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground whitespace-nowrap px-3 py-2 text-sm md:text-base"
                 >
-                  <span className="mr-2">{park.icon}</span>
-                  <span className="hidden md:inline">{park.name}</span>
-                  <span className="md:hidden">{park.name.split(' ')[0]}</span>
+                  <span className="mr-2 flex-shrink-0">{park.icon}</span>
+                  <span className="hidden md:inline truncate">{park.name}</span>
+                  <span className="md:hidden truncate">{park.shortName}</span>
                 </TabsTrigger>
               ))}
             </TabsList>

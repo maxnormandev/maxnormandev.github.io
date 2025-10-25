@@ -8,6 +8,7 @@ const Universal = () => {
     {
       id: "studios",
       name: "Universal Studios",
+      shortName: "Universal Studios",
       icon: "🎬",
       rides: [
         "Harry Potter and the Escape from Gringotts",
@@ -22,6 +23,7 @@ const Universal = () => {
     {
       id: "islands",
       name: "Islands of Adventure",
+      shortName: "Islands of Adventure",
       icon: "🌴",
       rides: [
         "Harry Potter and the Forbidden Journey",
@@ -36,6 +38,7 @@ const Universal = () => {
     {
       id: "volcano-bay",
       name: "Volcano Bay",
+      shortName: "Volcano Bay",
       icon: "🌊",
       rides: [
         "Ko'okiri Body Plunge",
@@ -85,16 +88,16 @@ const Universal = () => {
 
           {/* Park Guides */}
           <Tabs defaultValue="studios" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 h-auto gap-2 bg-transparent">
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto gap-2 bg-transparent">
               {parks.map((park) => (
                 <TabsTrigger 
                   key={park.id} 
                   value={park.id}
-                  className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+                  className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground whitespace-nowrap px-3 py-2 text-sm sm:text-base"
                 >
-                  <span className="mr-2">{park.icon}</span>
-                  <span className="hidden sm:inline">{park.name}</span>
-                  <span className="sm:hidden">{park.name.split(' ')[0]}</span>
+                  <span className="mr-2 flex-shrink-0">{park.icon}</span>
+                  <span className="hidden sm:inline truncate">{park.name}</span>
+                  <span className="sm:hidden truncate">{park.shortName}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
